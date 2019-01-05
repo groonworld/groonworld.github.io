@@ -13,7 +13,7 @@
     padding: 0;
     box-sizing: border-box;
     
-    /*border: 1px solid black; */
+    /*border: 1px solid black; <-- for testing purposes only */ 
 } /* Border-Box removes margins outside of the box to allow for easier sizing */
 
 html, body {
@@ -69,11 +69,11 @@ section {padding: 30px 0}
 /*-----------------Headings------------------*/
 
 h1 {
-    font-weight: 200;
+    font-weight: 100;
     font-size: 4em;
     text-transform: uppercase;
     text-align: center;
-    color: var(--dark-orange);
+    color: var(--main-orange);
 }
 
 h2,
@@ -87,7 +87,7 @@ h3 {
     font-size: 1em;
     margin-bottom: 2em;
     text-align: center;
-    color: var(--dark-orange);
+    color: var(--main-orange);
 }
 
 /*-----------------Navigation------------------*/
@@ -164,21 +164,28 @@ input:focus {
 
 .value {
     font-size: 300%;
-    font-weight: 250;
+    font-weight: 100;
     text-align: center;
+    color: var(--main-orange);
 }
 
 .value span {
     font-size: 40%;
     font-weight: 300;
+    color: var(--main-orange);
 }
 
+.cappuchino_container { width: 60%; }
 
+#cappuchino_price,
+#coffee_price {
+    font-weight: 300;
+    text-align: center;
+    color: var(--main-orange);
+}
 
-
-
-
-
-
-
-
+#cappuchino_price { 
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+#coffee_price { font-size: 0.8em; }
