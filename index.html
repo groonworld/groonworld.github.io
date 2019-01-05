@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<!-- 'Geld ist Zeit' by Groonworld, MIT License, Jan 2019 -->
+<!-- GELD IST ZEIT by groonworld.de -->
+<!-- Copyright 2019 by @groonworld, published under MIT License: https://opensource.org/licenses/MIT  -->
 <html lang="de">
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131790916-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-131790916-1');
-        </script>
-
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link type="text/css" rel="stylesheet" href="grid.css">
         <link type="text/css" rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato: 200,300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
 
         <title>Geld ist Zeit</title>
         
@@ -26,7 +19,7 @@
         
  <!---Section: Header------------------------------------------------------------------------------->
         <header>
-            <nav>
+            <!--<nav>
                 <div class="row">
                     <ul class="main-nav">
                         <li><a href="#">Home</a></li>
@@ -34,26 +27,26 @@
                         <li><a href="#">Wie funktioniert das?</a></li>
                     </ul>
                 </div>
-            </nav>
+            </nav> -->
         </header>
         
  <!---Section: Input-------------------------------------------------------------------------------->
         <section class="input">
             <div class="row title">
                 <h1>Geld ist Zeit.</h1>
-                <p>Wie viele Minuten Arbeitszeit kostet dich dein morgendlicher Cappuchino?<p>
+                <p>Was w&uuml;rde dein morgendlicher Cappuchino kosten, wenn du<br>ihn mit deiner Arbeitszeit statt mit Geld bezahlen w&uuml;rdest?<p>
                 
             </div>
             <div class="row">
                 <div class="input_container"> 
                     <table>
                         <tr>
-                            <td class="form-box one-third"><label for="input_gehalt">Gehalt in Euro</label></td>
-                            <td class="form-box two-thirds"><input type="text" name="input_gehalt" class="input_gehalt" placeholder="Gehalt" required></td>
+                            <td class="form-box one-third"><label for="input_gehalt">Gehalt in Euro (Netto)</label></td>
+                            <td class="form-box two-thirds"><input type="text" name="input_gehalt" class="input_gehalt" placeholder="Nettogehalt" required></td>
                         </tr>
                         <tr>
                             <td class="form-box one-third"><label for="input_stunden">Arbeitszeit in Stunden</label></td>
-                            <td class="form-box two-thirds"><input type="text" name="input_stunden" class="input_stunden" placeholder="Stunden/Woche" required></td>
+                            <td class="form-box two-thirds"><input type="text" name="input_stunden" class="input_stunden" placeholder="Arbeitsstunden/Woche" required></td>
                         </tr>
                     </table>    
                 </div>
@@ -65,6 +58,10 @@
         
  <!---Section: Output------------------------------------------------------------------------------->        
         <section class="output">
+            <div class="row cappuchino_container">
+                <p id="cappuchino_price"></p>
+                <p id="coffee_price"></p>
+            </div>    
             <div class="row">
                 <div class="col span-1-of-4">
                     <div class="box output_box">
