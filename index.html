@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- 'Geld ist Zeit' by Groonworld, copyright Jan 2019 -->
+<html lang="de">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link type="text/css" rel="stylesheet" href="grid.css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato: 200,300,400" rel="stylesheet">
+
+        <title>Geld ist Zeit</title>
+        
+    </head>
+    
+    <body>
+        
+ <!---Section: Header------------------------------------------------------------------------------->
+        <header>
+            <nav>
+                <div class="row">
+                    <ul class="main-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Die Idee</a></li>
+                        <li><a href="#">Wie funktioniert das?</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+ <!---Section: Input-------------------------------------------------------------------------------->
+        <section class="input">
+            <div class="row title">
+                <h1>Geld ist Zeit.</h1>
+                <p>Wie viele Minuten Arbeitszeit kostet dich dein morgendlicher Cappuchino?<p>
+                
+            </div>
+            <div class="row">
+                <div class="input_container"> 
+                    <table>
+                        <tr>
+                            <td class="form-box one-third"><label for="input_gehalt">Gehalt in Euro</label></td>
+                            <td class="form-box two-thirds"><input type="text" name="input_gehalt" class="input_gehalt" placeholder="Gehalt" required></td>
+                        </tr>
+                        <tr>
+                            <td class="form-box one-third"><label for="input_stunden">Arbeitszeit in Stunden</label></td>
+                            <td class="form-box two-thirds"><input type="text" name="input_stunden" class="input_stunden" placeholder="Stunden/Woche" required></td>
+                        </tr>
+                    </table>    
+                </div>
+            </div>
+            <div class="row button_container">
+                <span class="calculate_btn btn">Berechnen</span>
+            </div>    
+        </section>
+        
+ <!---Section: Output------------------------------------------------------------------------------->        
+        <section class="output">
+            <div class="row">
+                <div class="col span-1-of-4">
+                    <div class="box output_box">
+                        <div>
+                            <p class="value" id="value_day">?<span>€</span></p>
+                            <p class="value_description">pro Arbeitstag</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-4">
+                    <div class="box output_box">
+                        <div>
+                            <p class="value" id="value_hr">?<span>€</span></p>
+                            <p class="value_description">pro Stunde</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-4">
+                    <div class="box output_box">
+                        <div>
+                            <p class="value" id="value_quart">?<span>€</span></p>
+                            <p class="value_description">pro viertel Stunde</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-4">
+                    <div class="box output_box">
+                        <div>
+                            <p class="value" id="value_min">?<span>€</span></p>
+                            <p class="value_description">pro Minute</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <script src="script.js"></script>
+  </body>
+</html>
