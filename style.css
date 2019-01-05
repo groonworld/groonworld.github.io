@@ -44,7 +44,9 @@ html, body {
     margin: 0 auto;
 }
 
-section {padding: 30px 0}
+section { padding: 30px 0 }
+
+.spacer { margin-top: 2em; }
 
 .btn {
     display: inline-block;
@@ -82,12 +84,12 @@ h3 {
     text-transform: uppercase;
 }
 
-.title p {
+p {
     font-weight: 300;
     font-size: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     text-align: center;
-    color: var(--main-orange);
+    color: var(--text-color);
 }
 
 /*-----------------Navigation------------------*/
@@ -114,6 +116,7 @@ h3 {
 }
 
 .main-nav li a:hover,
+.main-nav li a:hover,
 .main-nav li a:active {
     border-bottom: 2px solid var(--main-orange);
 }
@@ -126,7 +129,10 @@ h3 {
     margin: 0 auto;
 }
 
-.input_container table {width: 100%;}
+.input_container table {
+    width: 100%;
+    margin-top: 1.5em;
+}
 
 .one-third {width: 33%;}
 
@@ -171,21 +177,21 @@ input:focus {
 
 .value span {
     font-size: 40%;
+    font-size: 40%;
     font-weight: 300;
     color: var(--main-orange);
 }
 
 .cappuchino_container { width: 60%; }
 
-#cappuchino_price,
-#coffee_price {
+#cappuchino_price {
     font-weight: 300;
     text-align: center;
-    color: var(--main-orange);
-}
-
-#cappuchino_price { 
+    color: var(--text-color);
     font-size: 1em;
     margin-bottom: 10px;
 }
-#coffee_price { font-size: 0.8em; }
+#cappuchino_price span {
+    font-weight: 400;
+    color: var(--main-orange);
+}
