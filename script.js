@@ -4,10 +4,11 @@
 /*  Published under MIT License: https://opensource.org/licenses/MIT   */
 /* --------------------------------------------------------------------*/
 
-(function() {
-    let things = {
-        cappuchino: 5,
-        cheapCoffee: 1.20,
+(function() {  
+    
+    let items = {                      // Will soon be expanded to include a range of everyday items people tend 
+        cappuchino: 5,                  // to spend a lot of money on without thinking much about it.
+        custom: -1,                     // "custom" will allow for calculations based on a user-defined price tag.
     };
     
     function setUpEventListeners() {
@@ -39,26 +40,23 @@
         logAll(input, results);
     };
     
-    function coffeePrice(results, things) {
+    function coffeePrice(results, items) {
         let unit = ' Minuten';
         return {
-            cappuchino: Math.round((things.cappuchino / results.minSalary)) + unit,
-            cheapCoffee: Math.round((things.cheapCoffee / results.minSalary)) + unit,
+            cappuchino: Math.round((items.cappuchino / results.minSalary)) + unit,
         }
     };
     
     function updateUI() { // Prints all the results to the user interface
         let results = calculate();
-        let prices = coffeePrice(results, things);
+        let prices = coffeePrice(results, items);
         let currency = '<span>&nbsp;€</span>';
         document.getElementById('value_day').innerHTML = results.dSalary.toFixed(2) + currency;
         document.getElementById('value_hr').innerHTML = results.hrSalary.toFixed(2) + currency;
         document.getElementById('value_quart').innerHTML = results.quartSalary.toFixed(2) + currency;
         document.getElementById('value_min').innerHTML = results.minSalary.toFixed(2) + currency;
         
-        document.getElementById('cappuchino_price').innerHTML = 'Dein geliebter Mandelmilch-Cappuchino (€' + parseFloat(things.cappuchino).toFixed(2) + ') kostet dich <strong>' + prices.cappuchino + '</strong> Arbeitszeit.';
-        document.getElementById('coffee_price').innerHTML = 'Der billig-Kaffee aus dem Bahnhofsautomat (€' + parseFloat(things.cheapCoffee).toFixed(2) + ') kostet dich <strong>' + prices.cheapCoffee + '</strong> Arbeitszeit.';
-
+        document.getElementById('cappuchino_price').innerHTML = '<p>Dein geliebter ' + items.cappuchino + '-Mandelmilch-Cappuchino kostet dich <span>' + prices.cappuchino + '</span> deiner Arbeitszeit.</p>';
     };
     
     /* ////////////////// FOR TESTING PURPOSES ONLY ///////////////////////////////////////
