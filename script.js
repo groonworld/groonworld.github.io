@@ -56,7 +56,7 @@
         document.getElementById('value_quart').innerHTML = results.quartSalary.toFixed(2) + currency;
         document.getElementById('value_min').innerHTML = results.minSalary.toFixed(2) + currency;
         
-        document.getElementById('cappuchino_price').innerHTML = '<p>Dein geliebter ' + items.cappuchino + '-Mandelmilch-Cappuchino kostet dich <span>' + prices.cappuchino + '</span> deiner Arbeitszeit.</p>';
+        document.getElementById('cappuchino_price').innerHTML = '<p>Dein geliebter ' + prices.cappuchino + '€-Mandelmilch-Cappuchino kostet dich <span>' + prices.cappuchino + '</span> deiner Arbeitszeit.</p>';
     };
     
     /* ////////////////// FOR TESTING PURPOSES ONLY ///////////////////////////////////////
