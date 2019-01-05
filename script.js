@@ -56,8 +56,8 @@
         document.getElementById('value_quart').innerHTML = results.quartSalary.toFixed(2) + currency;
         document.getElementById('value_min').innerHTML = results.minSalary.toFixed(2) + currency;
         
-        document.getElementById('cappuchino_price').innerHTML = 'Dein geliebter Mandelmilch-Cappuchino (€' + Number(things.cappuchino).toFixed(2) + ') kostet dich <strong>' + prices.cappuchino + '</strong> Arbeitszeit.';
-        document.getElementById('coffee_price').innerHTML = 'Der billig-Kaffee aus dem Bahnhofsautomat (€' + Number(things.cheapCoffee).toFixed(2) + ') kostet dich <strong>' + prices.cheapCoffee + '</strong> Arbeitszeit.';
+        document.getElementById('cappuchino_price').innerHTML = 'Dein geliebter Mandelmilch-Cappuchino (€' + parseFloat(things.cappuchino).toFixed(2) + ') kostet dich <strong>' + prices.cappuchino + '</strong> Arbeitszeit.';
+        document.getElementById('coffee_price').innerHTML = 'Der billig-Kaffee aus dem Bahnhofsautomat (€' + parseFloat(things.cheapCoffee).toFixed(2) + ') kostet dich <strong>' + prices.cheapCoffee + '</strong> Arbeitszeit.';
 
     };
     
