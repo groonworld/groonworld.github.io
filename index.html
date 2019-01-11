@@ -5,7 +5,15 @@
 
 <html lang="de">
     <head>
-        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131790916-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-131790916-1');
+        </script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -44,11 +52,11 @@
                     <table> <!-- This table nonsense needs to be replaced -->
                         <tr>
                             <td class="form-box one-third"><label for="input_gehalt">Gehalt in Euro (Netto)</label></td>
-                            <td class="form-box two-thirds"><input type="text" name="input_gehalt" class="input_gehalt" placeholder="Monatsgehalt netto" required></td>
+                            <td class="form-box two-thirds"><input type="text" id="input_gehalt" name="input_gehalt" class="input_gehalt" placeholder="Monatsgehalt netto" required></td>
                         </tr>
                         <tr>
                             <td class="form-box one-third"><label for="input_stunden">Arbeitszeit in Stunden</label></td>
-                            <td class="form-box two-thirds"><input type="text" name="input_stunden" class="input_stunden" placeholder="Arbeitsstunden pro Woche" required></td>
+                            <td class="form-box two-thirds"><input type="text" id="input_stunden" name="input_stunden" class="input_stunden" placeholder="Arbeitsstunden pro Woche" required></td>
                         </tr>
                     </table>    
                 </div>
@@ -59,77 +67,74 @@
         </section>
         
  <!---Section: Output------------------------------------------------------------------------------->        
-        <section class="output" id="output">
+        <section class="output">
         <!-- added by publish.update() [afterbegin] on click on #calculate_btn -->
-            <div class="row" id="cappuccino_display">
+            <div class="row" id="output_cappuccino">
                 <div id="cappuccino_price">
-                    <p>Dein geliebter <span>5&euro;-Mandelmilch-Cappuccino</span> kostet dich <span>36 Minuten</span> deiner Arbeitszeit.</p>
+                    <p>Dein geliebter <span>5&euro;-Mandelmilch-Cappuccino</span> kostet dich <span id="cappuccino">36 Minuten</span> deiner Arbeitszeit.</p>
                 </div>
             </div>
         <!-- -->
 <!-- added by publish.reveal() [beforeend] on click on #btn_reveal -->
-            <div class="row" id="custom_input">
+            <div class="row" id="output_custom">
                 <div class="custom_container">
                     <div class="col span-1-of-2">
                         <div class="custom custom_left">
-                            <p><label for="input_custom">Dein Preis:</label></p>
-                            <input type="text" name="input_custom" class="input_custom" placeholder="Umzurechnender Betrag in &euro;" required>
+                            <p><label for="input_custom">Was wird deine n&auml;chste Anschaffung kosten?</label></p>
+                            <input type="text" name="input_custom" id="input_custom" class="input_custom" placeholder="Umzurechnender Betrag in &euro;" required>
                             <div class="btn_container">
                                 <button class="btn-ghost" id="btn_custom_calc">Umrechnen</button>
                             </div>    
                         </div>
                     </div>
                     <div class="col span-1-of-2">
-                        <div class="custom custom_right">
-                            <div class="value_description">Entspricht</div>
-                            <div class="value" id="value_custom">?</div>
+                        <div class="custom custom_right">                           
+                            <div class="unit"><span id="custom_days">00</span><br>DD</div>
+                            <div class="unit"><span>:</span><br>:</div>
+                            <div class="unit"><span id="custom_hours">00</span><br>HH</div>
+                            <div class="unit"><span>:</span><br>:</div>
+                            <div class="unit"><span id="custom_minutes">00</span><br>MM</div>                     
                             <div class="value_description">deiner Arbeitszeit</div>
                         </div>
                     </div>
                 </div>    
             </div>
-        <!-- -->    
-        </section>    
-        <section class="output_hours">
-            <div class="row">
-                <div class="output_heading">    
-                    <p>Hier hast du einen &Uuml;berblick &uuml;ber den Wert deiner Zeit:</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col span-1-of-4">
-                    <div class="box output_box">
-                        <div>
-                            <div class="value" id="value_day">?<span>€</span></div>
-                            <div class="value_description">pro Arbeitstag</div>
-                        </div>
+        <!-- -->       
+            <div id="output_hours">
+                <div class="row">
+                    <div class="title">    
+                        <p>Hier hast du einen &Uuml;berblick &uuml;ber den Wert deiner Zeit:</p>
                     </div>
                 </div>
-                <div class="col span-1-of-4">
-                    <div class="box output_box">
-                        <div>
-                            <div class="value" id="value_hr">?<span>€</span></div>
-                            <div class="value_description">pro Stunde</div>
+                <div class="row">
+                    <div class="container_box">
+                        <div class="col span-1-of-3">
+                            <div class="box output_box">
+                                <div>
+                                    <div class="unit"><span id="value_day">00</span>&euro;</div>
+                                    <div class="value_description">pro Tag</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col span-1-of-4">
-                    <div class="box output_box">
-                        <div>
-                            <div class="value" id="value_quart">?<span>€</span></div>
-                            <div class="value_description">pro Viertelstunde</div>
+                        <div class="col span-1-of-3">
+                            <div class="box output_box">
+                                <div>
+                                    <div class="unit"><span id="value_hr">00</span>&euro;</div>
+                                    <div class="value_description">pro Stunde</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col span-1-of-4">
-                    <div class="box output_box">
-                        <div>
-                            <div class="value" id="value_min">?<span>€</span></div>
-                            <div class="value_description">pro Minute</div>
+                        <div class="col span-1-of-3">
+                            <div class="box output_box">
+                                <div>
+                                    <div class="unit"><span id="value_min">00</span>&euro;</div>
+                                    <div class="value_description">pro Minute</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div>    
                 </div>
-            </div>
+            </div>    
         </section>
 
       <script src="script.js"></script>

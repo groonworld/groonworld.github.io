@@ -137,7 +137,14 @@ p {
     border-bottom: 2px solid var(--main-orange);
 }
 
+/*-----------------Main-Body------------------*/
+
+.title { margin-top: 3em; }
+
+
+
 /*-----------------Input-Section------------------*/
+
 
 .input_container {
     width: 60%;
@@ -172,7 +179,14 @@ input:focus {
 
 /*-----------------Output-Section------------------*/
 
-.box {padding: 1%}
+.container_box { 
+    width: 60%;
+    margin-left: 20%;
+}
+.box {
+    padding: 1%;
+    color: var(--main-orange);
+}
 
 .output_box {
     background: #f7f7f7;
@@ -184,17 +198,23 @@ input:focus {
     box-shadow: -1px 1px 2px var(--box-shadow);
 }
 
-.value {
-    font-size: 300%;
+.unit {
+    display: inline-block;
+    align-self: center;
+    font-size: 100%;
     font-weight: 100;
+    margin-bottom: 1em;
+}
+
+.unit span {
+    font-size: 250%;
+    font-weight: 100;
+    letter-spacing: -0.03em;
     text-align: center;
     color: var(--main-orange);
 }
 
-.value span {
-    font-size: 33%;
-    font-weight: 300;
-}
+.value_description { color: var(--text-color); }
 
 #cappuccino_price {
     width: 60%;
@@ -228,17 +248,15 @@ input:focus {
 
 .custom {
     background-color: var(--subtle-grey);
+    text-align: center;
     padding: 1.5em 2em;
-    box-shadow: var(--box-shadow);
-    height: 160px;
+    box-shadow: -1px 1px 2px var(--box-shadow);
+    height: 200px;
 }
 
 .custom p {
-    text-align: left;
-    margin: 0;
+    padding: 5px;
 }
-
-.btn_container { text-align: center; }
 
 
 
