@@ -3,7 +3,7 @@ A personal finance calculator that is made to convert the prices of everyday ite
 
 Currently the UI is in german only.
 
-Planned features for future releases:
+Some ideas for future releases:
 
 English version UI
 A "detailed" version taking into account things such as yearly bonus payments or time spent commuting to and from work.
