@@ -24,13 +24,13 @@ let numberCruncher = (function() {
                 input.monatsgehalt !== '' &&
                 input.wochenstunden !== '') {
                 
-                const month = 52/12;
+                const weeksPerMonth = (365.25 / 7) / 12;
                 
                 return {
-                    hrSalary: input.monatsgehalt / (input.wochenstunden * month),
-                    dSalary: (input.monatsgehalt / (input.wochenstunden * month)) * (input.wochenstunden / workdays),
-                    minSalary: input.monatsgehalt / (input.wochenstunden * month) / 60,
-                    quartSalary: input.monatsgehalt / (input.wochenstunden * month) / 4
+                    hrSalary: input.monatsgehalt / (input.wochenstunden * weeksPerMonth),
+                    dSalary: (input.monatsgehalt / (input.wochenstunden * weeksPerMonth)) * (input.wochenstunden / workdays),
+                    minSalary: input.monatsgehalt / (input.wochenstunden * weeksPerMonth) / 60,
+                    quartSalary: input.monatsgehalt / (input.wochenstunden * weeksPerMonth) / 4
                 }
             } else {
                 console.log('Function salaryCalc() received NaN input.')
